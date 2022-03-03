@@ -25,13 +25,13 @@
 
 5. VSCode 단축키
 
-- 현재창 닫기 : Ctrl + w
-- 닫은창 다시열기 : Ctrl + Shift + t
-- 에디터 크기 : Ctrl + ➕/➖
-- 들여쓰기 : Ctrl + ]
-- 탭 산입 : 아래(Ctrl + Enter), 위(Ctrl + Shift + Enter)
-- 행 복사 : Alt + Shift + ⬆/⬇
-- 행 삭제 : Ctrl + Shift + k
+- 현재창 닫기 : <kbd>Ctrl</kbd> + <kbd>w</kbd>
+- 닫은창 다시열기 : <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>t</kbd>
+- 에디터 크기 : <kbd>Ctrl</kbd> + <kbd>+/-</kbd>
+- 들여쓰기 : <kbd>Ctrl</kbd> + <kbd>]</kbd>
+- 탭 산입 : 아래(<kbd>Ctrl</kbd> + <kbd>Enter</kbd>), 위(<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>)
+- 행 복사 : <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>⬆/⬇</kbd>
+- 행 삭제 : <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>k</kbd>
 
 ### 텍스트 요소
 
@@ -45,3 +45,30 @@
 
 - 작성한 그대로 출력
 - 고정폭 글꼴(가로폭 동일)
+
+6. 본문 - addr, address, cite, bdo
+
+- 마우스 hover 시 내용 출력 `<abbr title="World Wide Web>www</abbr>`
+
+10. 포매팅 - i, em(기울기 효과)
+
+- em : 강세, 대조적, 연관인 경우
+- 기술용어, 대명사, 외국 구절
+
+14. a태그와 하이퍼링크 2
+    `<a href="" target="_blank"> </a>` : 새창으로 열기
+
+15. 엔티티(Entity)
+    검색 : w3c entity
+
+### 구조를 나타내는 요소
+
+1. 컨테이너(div, span)
+   div(블록) vs span(인라인)
+
+7~8. article, section
+
+- article : main안에 위치, 단독적인 컨텐츠(기사, 블로그 글), 제목이 대부분 있음
+- section : 문맥적으로 호흡이 다른 경우
+
+### 목록과 표

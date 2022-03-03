@@ -25,4 +25,4 @@ fot (let x of abcd){
 }
 ```
 
-19. 반복문 While
+22. 함수
