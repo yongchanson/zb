@@ -52,8 +52,8 @@
 
 10. 포매팅 - i, em(기울기 효과)
 
+- i : 기술용어, 대명사, 외국 구절
 - em : 강세, 대조적, 연관인 경우
-- 기술용어, 대명사, 외국 구절
 
 14. a태그와 하이퍼링크 2
     `<a href="" target="_blank"> </a>` : 새창으로 열기
@@ -72,3 +72,39 @@
 - section : 문맥적으로 호흡이 다른 경우
 
 ### 목록과 표
+
+4~6. 표
+
+- scope : th에만 가능한 속성 ex) col, row
+- caprtion : 테이블의 첫자식이여야함
+- thead, tbody tfoot
+
+### 임베디드 요소
+
+> caniuse.com : 브라우저 지원가능여부 확인
+> placeholder.com/{150}or{150\*300} : 더미이미지 생성
+
+4~5. 반응형 이미지
+
+- srcset : 브라우저 크기에 따라 <u>다른 </u>이미지 출력(브라우저크기에 정비례)
+- sizes : srcset + 이미지크기고정(450~600은 450으로 고정)
+
+```
+<img src="{이미지경로}"
+srcset="images/small.png 300w,
+        images/medium.png 450w,
+        images/large.png 600w"
+sizes="(min-width: 600px) 600px,
+       (min-width: 450px) 450px,
+       300px"
+/>
+```
+
+6. video
+
+- autoplay : 웹페이지 진입 시 자동실행(muted와 같이 사용해야함)
+- poster : 썸네일
+
+### 폼 관련 요소
+
+4.
