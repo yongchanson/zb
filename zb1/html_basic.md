@@ -89,12 +89,13 @@
 - srcset : 브라우저 크기에 따라 <u>다른 </u>이미지 출력(브라우저크기에 정비례)
 - sizes : srcset + 이미지크기고정(450~600은 450으로 고정)
 
-```
-<img src="{이미지경로}"
-srcset="images/small.png 300w,
+```javascript
+<img
+  src="{이미지경로}"
+  srcset="images/small.png 300w,
         images/medium.png 450w,
         images/large.png 600w"
-sizes="(min-width: 600px) 600px,
+  sizes="(min-width: 600px) 600px,
        (min-width: 450px) 450px,
        300px"
 />
@@ -107,4 +108,21 @@ sizes="(min-width: 600px) 600px,
 
 ### 폼 관련 요소
 
-4.
+8, 13. input
+
+- input은 빈요소
+- autocomplete="on" : 자동완성
+- datalist : 값추천(select와 비슷하지만 값수정 가능), input의 list와 datalist의 id가 연결됨
+
+```javascript
+<lable for="movie">영화:</label>
+<input type="text" id="movie" list="movielist">
+<datalist id="movielist">
+  <option></option>
+  <option></option>
+</datalist>
+```
+
+### 메타데이터 요소
+
+### 전역 속성
