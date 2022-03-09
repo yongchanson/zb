@@ -130,4 +130,33 @@
 (3) attr\* : 포함하는
 ex) `a[href^="http://"]`
 
-7.
+9. 가상클래스 선택자
+
+- 적절한 링크 디자인 : LVHA(link->visited->hover->active)
+
+10. 가상요소(Pseudo-Element) 선택자
+
+- 존재하지 않는 요소를 존재하는 것처럼 부여(텍스트x)
+- ::을 사용(:은 일부 브라우저만 지원)
+
+13. 선택자 결합
+
+- 하위 선택 : `#list li`
+- 자식 선택(바로 하위만 선택) : `#list > li`
+
+14. 형제 선택자(<u>뒤에 있는 것만</u> 선택), 그룹화
+
+- 일반 형제 선택자 결합(~) : `code ~ p {}`
+- 인접 형제 선택자 결합(+) : `code + p {}`
+
+16~17. 상속 제어하기
+
+- 상속된 스타일 무시 : initial `.child1 { all: initial, color: initial }`
+- 상속된 스타일을 받음(지정된값 무시하고 기본값) : inherit
+- unset : 상속값o -> inherit / 상속값x -> initial
+
+18. 우선순위
+
+- !important `ex) color:blue !important`> id > class/attribute(`ex) href`)/pseudo class(가상요소) > type(tag) > \* > inherited(상속받은것)
+
+### 폰트 관련 속성

@@ -171,7 +171,7 @@ function answer(arr) {
 
 - 한번에 못품(이해는 잘 됨)
 
-### 수학 기본 이론
+### 수학 기본이론
 
 4. <u>순열</u>
 
@@ -220,3 +220,104 @@ c a b
 6
 */
 ```
+
+5. 조합
+   ![조합](https://user-images.githubusercontent.com/84462830/157258848-f4ba9965-6406-43f9-be80-a315e422f721.png)
+
+6. 점화식
+
+```javascript
+//등차수열
+let result;
+
+function recursive(s, t, num) {
+  in (num == 1) { //num==1이면 종료
+    return s;
+  }
+  return recursive(s, t, num-1) + t;
+}
+/*
+아래부터 읽음
+num:5 rec(s, t, 4) + 2  //9+2
+num:4 rec(s, t, 3) + 2  //7+2
+num:3 rec(s, t, 2) + 2  //5+2
+num:2 rec(s, t, 1) + 2  //3+2
+num:1 => 3반환
+*/
+
+result = recursive(3, 2, 5); // 초기값:3, 등차:2, 반복횟수:5
+console.log(result); //11
+```
+
+```javascript
+//피보나치 수열
+if (num == 1 || num == 0) {
+  //멈추는 조건
+  return num;
+}
+```
+
+8. 잃어버린 카드 찾기
+
+```javascript
+//내 풀이
+function answer(a, b, c) {
+  let number = 0;
+
+  num = [a, b, c];
+
+  x = b - a;
+  y = c - b;
+
+  if (x < y) {
+    number += b + x;
+  } else {
+    number += a + y;
+  }
+
+  return number;
+}
+```
+
+```javascript
+//해답 : sum(a+b+c) / arr.length = 등차(d)
+function answer(a, b, c) {
+  let number = 0;
+
+  // sort
+  num = [a, b, c];
+  num.sort((x, y) => x - y);
+
+  // 1. 등차값 찾기
+  let d = 0;
+  for (let i = 1; i < num.length; i++) {
+    d += num[i] - num[i - 1];
+  }
+  d /= num.length;
+
+  // 2. 빈index 찾기
+  let index = num[2] - num[1] > num[1] - num[0] ? 2 : 1;
+
+  // 3. 값 구하기
+  number = num[0] + d * index;
+
+  return number;
+}
+
+let input = [
+  // TC: 1
+  [1, 7, 10],
+
+  // TC: 2
+  [3, 8, 18],
+
+  // TC: 3
+  [2, 5, 11],
+];
+
+for (let i = 0; i < input.length; i++) {
+  console.log(`#${i + 1} ${answer(input[i][0], input[i][1], input[i][2])}`);
+}
+```
+
+### 선형 자료구조
