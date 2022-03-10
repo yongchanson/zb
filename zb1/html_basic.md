@@ -160,3 +160,16 @@ ex) `a[href^="http://"]`
 - !important `ex) color:blue !important`> id > class/attribute(`ex) href`)/pseudo class(가상요소) > type(tag) > \* > inherited(상속받은것)
 
 ### 폰트 관련 속성
+
+2. 배열
+
+- some : 조건을 만족하는 요소가 존재한다 ? true : false (빈배열=false)
+- every : 모든요소가 조건을 만족한다 ? true : false (<u>빈배열=true</u>)
+
+3. font
+
+- `.class{ font: font-style font-weight 20px/line-height }` (지정하지 않으면 기본값으로 변경)
+
+6. text-align
+
+- block속성에만 사용가능(확인방법 : background-color 추가), 적용안된다면 가로길이가 짧은지 확인

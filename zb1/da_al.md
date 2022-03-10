@@ -321,3 +321,59 @@ for (let i = 0; i < input.length; i++) {
 ```
 
 ### 선형 자료구조
+
+3. 최솟값 위치
+
+```javascript
+//메서드사용
+if (min == num[i]) {
+  result.push(i);
+}
+//인덱스사용
+if (min == nums[i]) {
+  result[count] = i;
+  count++;
+}
+```
+
+4. 체스세트
+
+```javascript
+//내 풀이
+p = [1, 1, 2, 2, 2, 8];
+
+for (i = 0; i < chess.length; i++) {
+  result[i] = p[i] - chess[i];
+}
+```
+
+```javascript
+//해답
+let count = 0;
+for (let i = 0; i < chess.length; i++) {
+  p[count++] = p[i] - chess[i];
+}
+```
+
+5. 두 수 최대합
+
+```javascript
+//풀이
+function answer(nums) {
+  let result = [];
+
+  result = nums[0] > nums[1] ? [nums[0], nums[1]] : [nums[1], nums[0]]; //0,1번째 요소를 세팅하고 시작함
+  for (let i = 2; i < nums.length; i++) {
+    if (nums[i] > result[0]) {
+      result[1] = result[0];
+      result[0] = nums[i];
+    } else if (nums[i] > result[1]) {
+      result[1] = nums[i];
+    }
+  }
+
+  return result;
+}
+```
+
+6.
