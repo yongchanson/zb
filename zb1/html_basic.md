@@ -166,10 +166,94 @@ ex) `a[href^="http://"]`
 - some : 조건을 만족하는 요소가 존재한다 ? true : false (빈배열=false)
 - every : 모든요소가 조건을 만족한다 ? true : false (<u>빈배열=true</u>)
 
-3. font
+3. font(순서중요)
 
 - `.class{ font: font-style font-weight 20px/line-height }` (지정하지 않으면 기본값으로 변경)
 
-6. text-align
+6~7. text-align, text-indent(들여쓰기)
 
 - block속성에만 사용가능(확인방법 : background-color 추가), 적용안된다면 가로길이가 짧은지 확인
+
+9~10. work-break, text-transform
+
+- break-all(다음줄로 넘어감o), keep-all(다음줄로 넘어감x) / 적용방법 : 띄어쓰기 없이 텍스트입력(aaaa)
+- 첫글자 대문자(실제변경x) : `text-transform: capitalize`
+
+### 단위의 값
+
+3. 상대길이
+
+- 1em(%) = 부모의 크기에 비례
+- 1rem = 기본사이즈에 비례
+
+### 박스 모델
+
+2. 크기
+
+-inline은 width,height 설정불가
+
+5~6. 여백 - 마진상쇄(margin collapsing)
+
+- inline, left, right는 발생x
+- 여러블록(block) 위/아래 margin중 하나만 적용(max값)
+  (1) 두 형제가 만나는 경우(위/아래 여백이 만나는)
+  (2) 부모의 margin과 자식의 margin이 만나는 경우 (부모의 border, padding, inline cotent이 없는 경우)
+  (3) 빈 블록(height 존재x)
+
+7. 여백 - padding
+
+- 음수(-) 사용불가, 패딩상쇄는 존재x
+- %은 무조건 부모의 가로기준(세로x)
+
+11. box-sizing
+
+- `*{box-sizing : border-box}`
+  요소의 크기가(width, height) cotent크기가 아닌, cotent + padding + border을 합친 크기
+
+### 레이아웃
+
+1. display
+
+- inline은 top/bottom의 margin, padding 조절불가(left, right는 가능) / 가로배치
+- block : width, height 지정가능 / 세로배치
+- inline-block : width, height지정가능 / 가로배치 / ex) `<input>`
+
+2. 요소없애는법
+
+- display : none (자리차지x, 삭제x)
+- visibility : hidden (자리차지o, 삭제x)
+
+3. float
+
+- `float : none` : 세로배치(block으로 배치)
+- `float : left`
+  ![image](https://user-images.githubusercontent.com/84462830/157677617-52404890-4187-4134-8592-8a83a4c9db62.png)
+
+5~6. position
+
+- static : top, light, left, botton 사용불가
+- relative : 자기자신기준 / top-bottom, left-left (같이사용x 왼쪽만 적용)
+- absolute : 조상 중에 static이 아닌 요소를 찾아 기준점을 삼는다. (없다면 body기준)
+
+7.  fixed
+
+- fixed : 뷰포트기준(커서를 내리면 따라옴)
+
+8. sticky
+
+- 스크롤이 특정위치를 지나갔을때 fixed처럼 작동
+- 스크롤되는 대상 하위요소에 지정해야함
+  ```javascript
+  //<div>가 많아 스크롤되는 상황(parent에 지정해야 작동)
+  <boby>
+  <div></div>
+  <div id="parent">
+    <div id="box"></div>
+  </div>
+  <div></div>
+  </body>
+  ```
+
+### 색상과 배경
+
+6.

@@ -55,7 +55,8 @@ function answer(str) {
 ```
 
 23. 재귀함수
-    ![재귀함수](https://user-images.githubusercontent.com/84462830/156611437-eb309ae9-41df-477f-a65e-e50c06c18a2f.png)
+
+![재귀함수](https://user-images.githubusercontent.com/84462830/156611437-eb309ae9-41df-477f-a65e-e50c06c18a2f.png)
 
 24. method
 
@@ -376,4 +377,82 @@ function answer(nums) {
 }
 ```
 
-6.
+6. 일곱 난장이
+
+```javascript
+//풀이
+function answer(dwarf) {
+  let result = [];
+
+  let sum = 0;
+  for (let i = 0; i < dwarf.length; i++) {
+    sum += dwarf[i];
+  }
+  sum -= 100; // -> 가짜난장이2명의 합
+
+  // 2. for 두 요소의 합이 faker 2명에 대한 합 숫자과 같은지 비교 -> i, j
+  let faker = [];
+  for (let i = 0; i < dwarf.length; i++) {
+    for (let j = i + 1; j < dwarf.length; j++) {
+      if (sum == dwarf[i] + dwarf[j]) {
+        faker[0] = i;
+        faker[1] = j;
+        break; //break를 만나면, for (let j..만 반환
+      }
+    }
+
+    if (faker.length != 0) break; //...답을 찾으면 for (let i..로 보냄 / 0인경우 답을 못 찾음 / break2개대신 라벨을 사용해도 괜찮
+  }
+
+  // 3. faker 두명을 제외하고 나머지 배지값을 result에 넣어준다
+  let count = 0;
+  for (let i = 0; i < dwarf.length; i++) {
+    if (faker[0] != i && faker[1] != i) {
+      result[count++] = dwarf[i];
+    }
+  }
+
+  return result;
+}
+```
+
+8. 투썸
+
+```javascript
+//내풀이(2중for문)
+function answer(nums, target) {
+  for (i = 0; i < nums.length; i++) {
+    for (j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] == target) {
+        return [i, j];
+      }
+    }
+  }
+  return []; //만약 문제있으면 빈배열 출력
+}
+```
+
+```javascript
+//해답(1중for문)
+function answer(nums, target) {
+  let map = {}; // key, value
+
+  // target - nums[i] = nums[j]
+  for (let i = 0; i < nums.length; i++) {
+    if (map[target - nums[i]] != undefined) {
+      //map[2x]라는 키가 존재한다면
+      return [map[target - nums[i]], i];
+    }
+
+    map[nums[i]] = i;
+  }
+  /*
+  map = { '2', 0 }
+  map[2] != undefinde 조건만족
+  return [ [map[2]의 인덱스(0), 본인인덱스(1)] ]
+  */
+  return [];
+}
+```
+
+9. OX퀴즈
