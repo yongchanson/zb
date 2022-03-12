@@ -416,6 +416,10 @@ function answer(dwarf) {
 }
 ```
 
+7. 나무그리기
+
+>
+
 8. 투썸
 
 ```javascript
@@ -455,4 +459,77 @@ function answer(nums, target) {
 }
 ```
 
-9. OX퀴즈
+9. <u>OX퀴즈</u>
+
+>
+
+10. 벽돌 옮기기
+
+```javascript
+//내풀이(해답과 로직같음)
+function answer(blocks) {
+  let result = 0;
+  let avg = 0;
+
+  blocks.forEach(function (item) {
+    avg += item;
+  });
+
+  avg /= blocks.length;
+
+  blocks.forEach(function (item) {
+    if (item > avg) {
+      result += item - avg;
+    }
+  });
+
+  return result;
+}
+```
+
+11. 숫자 빈도수 구하기
+
+```javascript
+//해답
+function answer(s, e) {
+  let result = [];
+
+  for (let i = 0; i < 10; i++) {
+    result[i] = 0; //result = [0, 0, ..., 0]
+  }
+
+  let num;
+  for (let i = s; i <= e; i++) {
+    num = i;
+
+    while (num != 0) {
+      //일의자리까지 반복
+      result[num % 10]++;
+      num /= 10;
+      num = parseInt(num); //소수점제거
+    }
+  }
+
+  return result;
+}
+```
+
+12. <u>달팽이 만들기</u>
+
+>
+
+14~. 연결리스트
+
+- 각노드가 데이터, 포인트를 가지며 / 한줄로 연결되어 있는 방식으로 / 데이터를 저장하는 자료구조
+
+- 16연결리스트(2)
+
+- 17연결리스트(3) : append(뒤에 추가)
+
+- 18연결리스트(4) : insert(앞에 추가)
+
+- 19연결리스트(5) : removeAt(인덱스를 이용한 삭제)
+
+- 20연결리스트(6) : indexOf + removeAt = remove
+
+21. 이중 연결 리스트
