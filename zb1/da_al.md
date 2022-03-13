@@ -518,7 +518,7 @@ function answer(s, e) {
 
 >
 
-14~. 연결리스트
+14~. 연결리스트(folder : 선형자료구조\_21~24이중연결리스트)
 
 - 각노드가 데이터, 포인트를 가지며 / 한줄로 연결되어 있는 방식으로 / 데이터를 저장하는 자료구조
 
@@ -532,4 +532,34 @@ function answer(s, e) {
 
 - 20연결리스트(6) : indexOf + removeAt = remove
 
-21. 이중 연결 리스트
+21. 이중 연결리스트
+    ![이중연결리스트](https://user-images.githubusercontent.com/84462830/158052409-abfaf6dc-f8c3-41f4-9d79-ac3207bddf6e.png)
+
+22~. 이중 연결리스트
+
+```javascript
+node = new Node(456);
+dll.tail.next = node; //tail.next에 node(456) 만듦
+node.prev = dll.tail; //node(456)의 prev -> dll.tail을 연결
+dll.tail = node; //dll.tail -> node 연결
+dll.length++;
+console.log(dll);
+```
+
+26. 원형 연결리스트
+
+- node.next = this.head;
+
+29. 문제 : 열차연결
+
+>
+
+30. 문제 : 서류정리
+
+>
+
+31. 문제 : 대표선출
+
+>
+
+32.
