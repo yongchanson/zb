@@ -258,4 +258,10 @@ ex) `a[href^="http://"]`
 
 ### transform
 
-3.
+6. 기준점 - transform-origin
+
+- ex) 넷플릭스 `transform: scale(1.5) transform-origin : top left`
+
+### transition
+
+4.

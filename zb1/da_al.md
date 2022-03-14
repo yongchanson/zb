@@ -562,4 +562,37 @@ console.log(dll);
 
 >
 
-32.
+32. 스택
+
+- Stack.peak() : 마지막 데이터 조회
+
+34. 문제 : 기차운행
+
+```javascript
+//prototype 사용x
+function answer(train) {
+  let stack = [];
+  let num = 0;
+
+  for (let i = 0; i < train.length; i++) {
+    //순서 : while돌고 false이면 -> if
+    while (stack.length == 0 || stack[stack.length - 1] < train[i]) {
+      //[3,2,1] 인경우 stack가장오른쪽값<3
+      stack.push(++num);
+    }
+
+    if (stack[stack.length - 1] == train[i]) {
+      stack.pop();
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
+```
+
+35. 문제 : 괄호 짝찾기
+
+>
+
+36. 문제 : 접시 꺼내기
