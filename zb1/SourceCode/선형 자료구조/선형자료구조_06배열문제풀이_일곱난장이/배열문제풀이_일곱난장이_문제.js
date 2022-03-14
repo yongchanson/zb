@@ -3,13 +3,17 @@
 /* user code */
 function answer(dwarf) {
   let result = [];
+  sum = 0;
 
-  // 코드 구현 시작 영역
+  for (i = 0; i < dwarf.length; i++) {
+    sum += dwarf[i];
+  }
+  remain = sum - 100;
 
-  // …
-
-  // 코드 구현 종료 영역
-
+  for (i = 0; i < dwarf.length; i++) {
+    if (a + b) {
+    }
+  }
   return result;
 }
 

@@ -6,10 +6,17 @@ function answer(a, b, c) {
 
   // sort
   num = [a, b, c];
-  num.sort((x, y) => x - y);
+  // num.sort((x, y) => x - y);
 
   // 코드 구현 시작 영역
+  x = b - a;
+  y = c - b;
 
+  if (x < y) {
+    number += b + x;
+  } else {
+    number += a + y;
+  }
   // …
 
   // 코드 구현 종료 영역

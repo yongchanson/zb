@@ -131,10 +131,11 @@ LinkedList.prototype.indexOf = function (value) {
     index = 0;
 
   while (current != null) {
+    //(current=null) -> 끝지점이 같다 -> -1이 리턴
     if (current.data === value) {
-      return index;
+      return index; //찾으면 index리턴
     }
-
+    //찾지못하면 index++, current업데이트
     index++;
     current = current.next;
   }

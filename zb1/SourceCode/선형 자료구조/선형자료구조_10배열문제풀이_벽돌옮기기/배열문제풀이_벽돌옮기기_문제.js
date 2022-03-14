@@ -3,12 +3,25 @@
 /* user code */
 function answer(blocks) {
   let result = 0;
+  let avg = 0;
 
-  // 코드 구현 시작 영역
+  // blocks.forEach(function (item) {
+  //   if (item > 5) {
+  //     result += item - 5;
+  //   }
+  // });
 
-  // …
+  blocks.forEach(function (item) {
+    avg += item;
+  });
 
-  // 코드 구현 종료 영역
+  avg /= blocks.length;
+
+  blocks.forEach(function (item) {
+    if (item > avg) {
+      result += item - avg;
+    }
+  });
 
   return result;
 }

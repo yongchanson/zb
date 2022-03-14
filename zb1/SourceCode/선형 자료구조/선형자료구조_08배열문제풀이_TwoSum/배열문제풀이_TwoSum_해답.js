@@ -8,12 +8,19 @@ function answer(nums, target) {
   // for 2중 O(n^2) -> for 1중 O(n)
   for (let i = 0; i < nums.length; i++) {
     if (map[target - nums[i]] != undefined) {
+      //map[x]라는 키가 존재한다면
       return [map[target - nums[i]], i];
     }
 
     map[nums[i]] = i;
   }
+  /*
+  { '2', 0 }
+  map[2] != undefinde 조건만족
+  return [ [map[2]의 인덱스(0), 본인인덱스(1)] ]
 
+
+  */
   return [];
 }
 

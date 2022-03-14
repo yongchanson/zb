@@ -38,7 +38,7 @@ function answer(n, m, k) {
   let count;
   while (current.next != current) {
     result.push(current.data);
-    prev.next = current.next;
+    prev.next = current.next; //1->2->3인 상황에서 : prev(1).next를 current(2).next=3으로 변경 => 1->3형태로 연결됨
 
     count = k;
     while (count--) {

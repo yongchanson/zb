@@ -47,9 +47,9 @@ DoubleLinkedList.prototype.append = function (value) {
     this.head = node;
     this.tail = node;
   } else {
-    this.tail.next = node;
-    node.prev = this.tail;
-    this.tail = node;
+    this.tail.next = node; //tail.next가 새로운 node를 가리킴
+    node.prev = this.tail; //node.prev가 tail을 가리킴
+    this.tail = node; //tati이 node를 가리킴(?)
   }
 
   this.length++;

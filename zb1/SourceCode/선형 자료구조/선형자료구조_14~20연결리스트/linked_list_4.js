@@ -76,7 +76,7 @@ LinkedList.prototype.insert = function (value, position = 0) {
 
 // remove(): value 데이터를 찾아 노드 삭제
 LinkedList.prototype.remove = function (value) {
-  let current = this.head,
+  let current = this.head, //current은 초기 head를 가르킨다.
     prev = current;
 
   while (current.data != value && current.next != null) {
@@ -85,18 +85,20 @@ LinkedList.prototype.remove = function (value) {
   }
 
   if (current.data != value) {
-    return null;
+    //값을 못찾았다.
+    return null; //종료
   }
 
   if (current === this.head) {
-    this.head = current.next;
+    //너가 현재 헤드가 가르키는 노드와 동일한다면(c=1인 경우는 else로 이동)
+    this.head = current.next; //헤드를 current.next로 업데이트
   } else {
-    prev.next = current.next;
+    prev.next = current.next; //3의 prev.next가 1에서 null로 변경
   }
 
   this.length--;
 
-  return current.data;
+  return current.data; //삭제한 데이트를 반환
 };
 
 let ll = new LinkedList();

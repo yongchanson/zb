@@ -30,8 +30,8 @@ dll.length++;
 console.log(dll);
 
 node = new Node(456);
-dll.tail.next = node;
-node.prev = dll.tail;
-dll.tail = node;
+dll.tail.next = node; //tail.next에 node(456) 만듦
+node.prev = dll.tail; //node(456)의 prev -> dll.tail을 연결
+dll.tail = node; //dll.tail -> node 연결
 dll.length++;
 console.log(dll);

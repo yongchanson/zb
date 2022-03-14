@@ -4,11 +4,23 @@
 function answer(chess) {
   let result = [];
 
-  // 코드 구현 시작 영역
+  // p1 = 1;
+  // p2 = 2;
+  // p3 = 8;
 
-  // …
+  p = [1, 1, 2, 2, 2, 8];
 
-  // 코드 구현 종료 영역
+  // for (i = 0; i < chess.length; i++) {
+  //   if (chess[i] == p[i]) {
+  //     result[i] = 0;
+  //   } else {
+  //     result[i] = p[i] - chess[i];
+  //   }
+  // }
+
+  for (i = 0; i < chess.length; i++) {
+    result[i] = p[i] - chess[i];
+  }
 
   return result;
 }

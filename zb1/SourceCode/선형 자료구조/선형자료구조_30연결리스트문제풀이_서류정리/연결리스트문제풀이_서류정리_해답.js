@@ -9,20 +9,20 @@ function LinkedList() {
 }
 
 function answer(ll) {
-  let current = ll.head,
+  let current = ll.head, //current에 첫번쨰노드가 가리키는 것을 넣음
     prev = null,
     next;
 
   // 1. 역 방향 정렬
   while (current != null) {
-    next = current.next;
-    current.next = prev;
-    prev = current;
-    current = next;
+    next = current.next; //next라는 임시값에 current.next을 저장
+    current.next = prev; //current.next을 이전객체와 연결 / 현재객체(c).next를 prev로 옮겨주고,
+    prev = current; //current의 현재위치를 prev로 업데이트(앞으로 땡김)
+    current = next; //current의 포인트를 next가 가리키는곳으로 이동
   }
 
   // 2. head 업데이트
-  ll.head = prev;
+  ll.head = prev; //null객체 이전에 있는 prev로 해줌
 
   return ll;
 }

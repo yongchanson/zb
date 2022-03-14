@@ -5,7 +5,13 @@ function answer(withdraw, total) {
   let result;
 
   // 코드 구현 시작 영역
-
+  if(t - 0.5 < w) {
+    result = t
+  } else if (w % 5 != 0) {
+    result = t
+  } else {
+    result = t - 0.5 -w
+  }
   // …
 
   // 코드 구현 종료 영역

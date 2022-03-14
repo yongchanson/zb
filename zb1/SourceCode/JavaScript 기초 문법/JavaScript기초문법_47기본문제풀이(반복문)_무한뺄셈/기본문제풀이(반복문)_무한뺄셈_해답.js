@@ -8,9 +8,9 @@ function answer(s, e) {
 
   let sum;
   while (1) {
-    sum = s - e;
-    s = e;
-    e = sum;
+    sum = s - e; //1
+    s = e; // 6
+    e = sum; //1
 
     if (e < 0) break;
 

@@ -17,8 +17,11 @@ function answer(length) {
 
   let direction = 1;
   let x, y, num;
-  x = y = num = 0;
-  x--;
+  // x = y = num = 0;
+  // x--;
+  y = num = 0;
+  x = -1;
+
   while (1) {
     for (let i = 0; i < length; i++) {
       x += direction;

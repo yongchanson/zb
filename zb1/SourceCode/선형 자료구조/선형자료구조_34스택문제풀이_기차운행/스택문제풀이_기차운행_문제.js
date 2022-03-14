@@ -2,9 +2,24 @@
 
 /* user code */
 function answer(train) {
-  // 코드 구현 시작 영역
-  // …
-  // 코드 구현 종료 영역
+  let stack = [];
+  let num = 0;
+
+  for (let i = 0; i < train.length; i++) {
+    //순서 : while돌고 false이면 -> if
+    while (stack.length == 0 || stack[stack.length - 1] < train[i]) {
+      //[3,2,1] 인경우 stack가장오른쪽값<3
+      stack.push(++num);
+    }
+
+    if (stack[stack.length - 1] == train[i]) {
+      stack.pop();
+    } else {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 /* main code */

@@ -4,11 +4,22 @@
 function answer(nums) {
   let result = [];
 
-  // 코드 구현 시작 영역
+  //1. 최솟값 찾기
+  min = Number.MAX_SAFE_INTEGER;
 
-  // …
+  for (i = 0; i < nums.length; i++) {
+    if (min > nums[i]) {
+      min = nums[i];
+    }
+  }
 
-  // 코드 구현 종료 영역
+  //2. 최소값 위치 찾기
+
+  for (i = 0; i < nums.length; i++) {
+    if (min == nums[i]) {
+      result = i; // result[]에 넣어야함
+    }
+  }
 
   return result;
 }

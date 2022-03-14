@@ -22,10 +22,10 @@ function answer(nums) {
     if (i === 0) {
       ll.head = current;
     } else {
-      prev.next = current;
+      prev.next = current; //이전의 객체는 현재객체를 가리킴
     }
 
-    prev = current;
+    prev = current; //현재 내 위치 이전의 트레인값을 지속적으로 가리킴(?)
   }
 
   return ll;

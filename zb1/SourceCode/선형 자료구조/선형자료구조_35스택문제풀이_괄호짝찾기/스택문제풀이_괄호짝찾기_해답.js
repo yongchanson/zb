@@ -22,10 +22,10 @@ function answer(str) {
       stack.push(i);
     } else if (str[i] == ")") {
       if (stack.isEmpty()) {
+        //비어있다 = "(" 보다 ")"가 먼저 있음
         return [];
       }
-
-      result.push([stack.pop(), i]);
+      result.push([stack.pop(), i]); //pop가장 위에있는것을 제거, elesif일때만 수행
     }
   }
 

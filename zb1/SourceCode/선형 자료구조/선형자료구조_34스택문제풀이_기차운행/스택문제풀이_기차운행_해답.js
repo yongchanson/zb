@@ -2,7 +2,7 @@
 
 if (!Array.prototype.peek) {
   Array.prototype.peek = function () {
-    return this[this.length - 1];
+    return this[this.length - 1]; //this는 Array자신을 가리킴
   };
 }
 
@@ -19,6 +19,7 @@ function answer(train) {
 
   for (let i = 0; i < train.length; i++) {
     while (stack.isEmpty() || stack.peek() < train[i]) {
+      //stack.peek() == stack[stack.length - 1] : this자리에 stack대입한다는 뜻
       stack.push(++num);
     }
 

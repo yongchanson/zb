@@ -110,14 +110,16 @@ LinkedList.prototype.removeAt = function (position = 0) {
     prev;
 
   if (position === 0) {
+    //removeAt(4)인 경우 0이 아니라 else로 빠짐
     this.head = current.next;
   } else {
     while (index++ < position) {
+      //c=index4, p는 이전의c값(index3)
       prev = current;
       current = current.next;
     }
 
-    prev.next = current.next;
+    prev.next = current.next; //index3이 null(current.next)을 가리킴
   }
 
   this.length--;

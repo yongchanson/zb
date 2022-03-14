@@ -2,9 +2,23 @@
 
 /* user code */
 function answer(nums, target) {
-  // 코드 구현 시작 영역
-  // …
-  // 코드 구현 종료 영역
+  // result = [];
+
+  for (i = 0; i < nums.length; i++) {
+    for (j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] == target) {
+        // if (i > j) {
+        //   result.push = j;
+        //   result.push = i;
+        // } else {
+        //   result.push = i;
+        //   result.push = j;
+        // }
+        return [i, j];
+      }
+    }
+  }
+  return []; //만약 문제있으면 빈배열 출력
 }
 
 /* main code */
