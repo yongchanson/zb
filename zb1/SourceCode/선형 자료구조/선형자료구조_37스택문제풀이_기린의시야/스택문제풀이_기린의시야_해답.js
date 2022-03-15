@@ -22,7 +22,7 @@ function answer(giraffe) {
     while (!stack.isEmpty() && stack.peek()["h"] < giraffe[i]) {
       result += i - stack.pop()["i"] - 1;
     }
-    stack.push({ h: giraffe[i], i: i });
+    stack.push({ h: giraffe[i], i: i }); //stack.push([ giraffe[i], i ]);
   }
 
   return result;

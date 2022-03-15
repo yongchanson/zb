@@ -4,11 +4,9 @@
 function answer(giraffe) {
   let result = 0;
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  for (i = 0; i < giraffe.length; i++) {
+    while (stack.peek() < giraffe[i]) {}
+  }
 
   return result;
 }

@@ -11,6 +11,18 @@ if (!Array.prototype.isEmpty) {
     return this.length == 0;
   };
 }
+/*TC1
+mark | stack | temp | result
+ (      (       2      0
+ (      ((      4      0
+ )      (       2      4
+ [      ([      6      4
+ [      ([[     18     4
+ ]      ([      6      22
+ ]      (       2      22
+ )              1      22     
+인접하지 않은 경우 : result+없이 stack.pop, temp/=을 수행
+ */
 
 /* user code */
 function answer(str) {
@@ -36,11 +48,12 @@ function answer(str) {
         }
 
         if (str[i - 1] == "(") {
+          //()가 연속된 경우
           result += temp;
         }
 
         stack.pop();
-        temp /= 2;
+        temp /= 2; //원상복구
         break;
       case "]":
         if (stack.isEmpty() || stack.peek() != "[") {
@@ -50,7 +63,7 @@ function answer(str) {
         if (str[i - 1] == "[") {
           result += temp;
         }
-
+        // console.log(stack);
         stack.pop();
         temp /= 3;
         break;

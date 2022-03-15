@@ -5,6 +5,7 @@ function Queue(array) {
 
 // getBuffer(): 객체 내 데이터 셋 반환
 Queue.prototype.getBuffer = function () {
+  //[1,2,3]
   return this.array.slice();
 };
 

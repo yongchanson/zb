@@ -23,20 +23,27 @@ function answer(str) {
   // 3. 최 상단 접시와 비교
 
   let stack = [];
-  let dish = str.split("").sort().join("");
+  let dish = str.split("").sort().join(""); //split->b,a,c,d / sort->a,b,c,d / join-> abcd
   let dish_index = 0;
 
   for (let i = 0; i < str.length; i++) {
+    //TC:bacd -> str:bacd / dish:abcd=stack
     while (stack.isEmpty() || stack.peek() < str[i]) {
-      stack.push(dish[dish_index++]);
-      result.push(0);
+      //1.존재x 2.a<b? 3. b<b?:while탈출
+      stack.push(dish[dish_index++]); //stack: a,b
+      result.push(0); //result:0, 0
     }
 
     if (stack.isEmpty() || stack.peek() > str[i]) {
       return [];
     } else {
-      stack.pop();
-      result.push(1);
+      //statck.peek()==str[i]인 경우 /
+      console.log(`stack : ${stack}`);
+      console.log(result);
+      stack.pop(); //stack: a,b에서 b삭제 -> stack: a
+      result.push(1); //result: 0, 0, 1
+      console.log(`stack : ${stack}`);
+      console.log(result);
     }
   }
 

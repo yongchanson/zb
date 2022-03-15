@@ -564,7 +564,7 @@ console.log(dll);
 
 32. 스택
 
-- Stack.peak() : 마지막 데이터 조회
+- Stack.peek() : 마지막 데이터 조회
 
 34. 문제 : 기차운행
 
@@ -596,3 +596,20 @@ function answer(train) {
 >
 
 36. 문제 : 접시 꺼내기
+
+> c
+
+37. 기린의 시야
+
+>
+
+38. 괄호 계산
+
+>
+
+39. 큐
+
+- 데이터 추가/삭제(앞에서부터) : Queue.enqueue() : 공간도 늘어남/ dequeue() : 공간유지
+- 1st데이터 : Queue.front()
+
+### 비선형 구조
