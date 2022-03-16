@@ -17,6 +17,9 @@ function answer(nums) {
   for (let i = 0; i < nums.length; i++) {
     if (min == nums[i]) {
       result[count++] = i;
+      // 같은식임
+      // result[count] = i;
+      // count++;
     }
   }
 

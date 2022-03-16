@@ -24,8 +24,8 @@ function answer(length) {
 
   while (1) {
     for (let i = 0; i < length; i++) {
-      x += direction;
-      result[y][x] = ++num;
+      x += direction; //x=-1+1=0
+      result[y][x] = ++num; //result[0][0]=1 -> result[0][1]=2
     }
 
     length--;

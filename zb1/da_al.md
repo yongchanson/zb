@@ -111,7 +111,24 @@ if (x > y) {
 
 47. 무한뺄셈
 
-- 조금 햇갈렸음
+```javascript
+function answer(s, e) {
+  let seq = [];
+  seq.push(s);
+  seq.push(e);
+
+  let dif;
+  while (true) {
+    dif = s - e;
+    s = e;
+    e = dif;
+
+    if (e < 0) break;
+
+    seq.push(e);
+  }
+}
+```
 
 56. 요일구하기
 
@@ -131,18 +148,6 @@ function answer(str) {
 57. 중복 단어 제거
 
 ```javascript
-//new Set(arr) : 중복값 제거
-//Araay.from(값) : `new Set(arr)`의 값을 `new_arr` 배열로 반환(얕은복사, 새로운복사)
-function answer(arr) {
-  let new_arr = [];
-
-  new_arr = Array.from(new Set(arr)); //new Set(arr) : [ 'a', 'b', 'c' ]
-
-  return new_arr;
-}
-```
-
-```javascript
 //forEach활용
 function answer(arr) {
   let new_arr = [];
@@ -157,7 +162,7 @@ function answer(arr) {
 
 58. 배열 내 최댓값
 
-- max를 0으로 초기화하면(`max=0;`) 음수만 있을경우 0이 리턴되기 때문에 arr[0] or Number.MIN_SAFE_INTEGER(음수의 최소값)으로 초기화해야함
+- max를 0으로 초기화하면(`max=0;`) 음수만 있을경우 0이 리턴되기 때문에 arr[0] : 테스트케이스의 첫번째 배열 or Number.MIN_SAFE_INTEGER(음수의 최소값)으로 초기화해야함
 
 59. 스팸메일
 
@@ -165,16 +170,24 @@ function answer(arr) {
 
 60. 배열회전
 
-- for문에서 키포 : `i < user.length / 2`
-- 대칭만드는법 : `user[i] = user[user.length - 1 - i]`
+```javascript
+//for문 전체경유하는 풀이
+for (let i = input.length - 1; i >= 0; i--) {
+  result.push(input[i]);
+}
+```
 
 61. 문자교정
 
-- 한번에 못품(이해는 잘 됨)
+>
 
 ### 수학 기본이론
 
 4. <u>순열</u>
+
+- 순서에 상관있게 나열 nPr
+
+![순열4중포문](https://user-images.githubusercontent.com/84462830/158531433-e02db89b-439d-489c-9229-5ce43c0c7fef.png)
 
 ```javascript
 //재귀함수를 이용한 풀이
@@ -184,6 +197,7 @@ let count = 0;
 function permutation(arr, s, r) {
   //s=시작, r=뽑을 개수
   // 1.재귀함수를 멈춰야할 조건
+  console.log(`s:${s}`);
   if (s == r) {
     count++;
     console.log(arr.join(" ")); // join의 역할 : ['a', 'b'] -> ab
@@ -191,39 +205,25 @@ function permutation(arr, s, r) {
   }
   // 2. 재귀를 돌면서 변경되어야 할 부분(메인로직)
   for (let i = s; i < arr.length; i++) {
+    console.log(`for1> i:${i}, s:${s}, ${arr}`);
     [arr[s], arr[i]] = [arr[i], arr[s]]; // 스왑
+    console.log(`for2> i:${i}, s:${s}, ${arr}`);
     permutation(arr, s + 1, r);
-    [arr[s], arr[i]] = [arr[i], arr[s]]; // 원상복구
+    console.log(`for3> i:${i}, s:${s}, ${arr}`);
+    [arr[s], arr[i]] = [arr[i], arr[s]]; // 원상복구(?)
+    console.log(`for4> i:${i}, s:${s}, ${arr}`);
   }
-  /*
-  s=0, r=2, i=0 : ['a', ] // arr[s]=arr[i]라서 바뀌지 않음
-  s=1, r=2, i=1 : ['a', 'b', ]
-  s=2, r=2 : ['a', 'b', 'c'] //s=r이므로 배열출력
-  ...
-  s=1, r=2, i=2 : ['a', 'c', ] : arr[s], arr[i] = arr[1], arr[2] = b, c가 스왑
-  s=2, r=2 : ['a', 'c', 'b']
-  s=1, r=2, i=2 : ['a', 'b', 'c'] //...원래대로
-  ...
-  s=0, r=2, i=1 : ['b', 'a', 'c']
-  ...
-  s=0, r=2, i=2 : ['c', ... ]
-  */
 }
 
 permutation(input, 0, 2); // 0:시작 2:뽑을 개수
 console.log(count);
-/*output
-a b c
-a c b 
-b c a 
-c b a
-c a b
-6
-*/
 ```
 
-5. 조합
-   ![조합](https://user-images.githubusercontent.com/84462830/157258848-f4ba9965-6406-43f9-be80-a315e422f721.png)
+5. <u>조합</u>
+
+![조합2중for](https://user-images.githubusercontent.com/84462830/158579957-58434df5-8883-46e5-bb40-9e3bf6a9e668.png)
+
+![조합](https://user-images.githubusercontent.com/84462830/157258848-f4ba9965-6406-43f9-be80-a315e422f721.png)
 
 6. 점화식
 
@@ -281,7 +281,7 @@ function answer(a, b, c) {
 ```
 
 ```javascript
-//해답 : sum(a+b+c) / arr.length = 등차(d)
+//해답 : sum(각항의차이) / arr.length = 등차(d)
 function answer(a, b, c) {
   let number = 0;
 
@@ -325,17 +325,7 @@ for (let i = 0; i < input.length; i++) {
 
 3. 최솟값 위치
 
-```javascript
-//메서드사용
-if (min == num[i]) {
-  result.push(i);
-}
-//인덱스사용
-if (min == nums[i]) {
-  result[count] = i;
-  count++;
-}
-```
+>
 
 4. 체스세트
 
@@ -451,15 +441,15 @@ function answer(nums, target) {
     map[nums[i]] = i;
   }
   /*
-  map = { '2', 0 }
+  map = { '2': 0 }
   map[2] != undefinde 조건만족
-  return [ [map[2]의 인덱스(0), 본인인덱스(1)] ]
+  return [ [map[2]의 값(0), 본인인덱스(1)] ]
   */
   return [];
 }
 ```
 
-9. <u>OX퀴즈</u>
+9. OX퀴즈
 
 >
 
@@ -495,7 +485,7 @@ function answer(s, e) {
   let result = [];
 
   for (let i = 0; i < 10; i++) {
-    result[i] = 0; //result = [0, 0, ..., 0]
+    result[i] = 0; //result = [0, 0, ..., 0] : length 10개
   }
 
   let num;
@@ -503,7 +493,7 @@ function answer(s, e) {
     num = i;
 
     while (num != 0) {
-      //일의자리까지 반복
+      //소수가 되기 전까지 반복
       result[num % 10]++;
       num /= 10;
       num = parseInt(num); //소수점제거
@@ -533,7 +523,8 @@ function answer(s, e) {
 - 20연결리스트(6) : indexOf + removeAt = remove
 
 21. 이중 연결리스트
-    ![이중연결리스트](https://user-images.githubusercontent.com/84462830/158052409-abfaf6dc-f8c3-41f4-9d79-ac3207bddf6e.png)
+
+![이중연결리스트](https://user-images.githubusercontent.com/84462830/158052409-abfaf6dc-f8c3-41f4-9d79-ac3207bddf6e.png)
 
 22~. 이중 연결리스트
 

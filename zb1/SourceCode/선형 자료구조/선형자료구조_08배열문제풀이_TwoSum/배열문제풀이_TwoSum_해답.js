@@ -13,6 +13,7 @@ function answer(nums, target) {
     }
 
     map[nums[i]] = i;
+    console.log(map);
   }
   /*
   { '2', 0 }

@@ -1,10 +1,12 @@
 /* 5. 중복 단어 제거 */
 
 /* user code */
+//new Set(arr) : 중복값 제거
+//Araay.from(값) : `new Set(arr)`의 값을 `new_arr` 배열로 반환(얕은복사, 새로운복사)
 function answer(arr) {
   let new_arr = [];
 
-  new_arr = Array.from(new Set(arr));
+  new_arr = Array.from(new Set(arr)); //new Set(arr) : { 'a', 'b', 'c' }
 
   return new_arr;
 }
