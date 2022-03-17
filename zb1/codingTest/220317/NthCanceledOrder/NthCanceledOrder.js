@@ -4,19 +4,24 @@
  * @returns {number}
  */
 function solution(orders, n) {
-  let missCount = 0
-  let num = 0
-  let i = 0
+  let missCount = 0;
+  let num = 0;
+  let i = 0;
   while (missCount !== n) {
-    num++
-
+    num++;
+    console.log(`num : ${num}`);
+    console.log(`order[i]: ${orders[i]}`);
     if (orders[i] === num) {
-      i++
+      i++;
+      console.log(`i : ${i}`);
     } else {
-      missCount++
+      missCount++;
+      console.log(`missCount : ${missCount}`);
     }
   }
-  return num
+  return num;
 }
 
-solution
+solution;
+
+console.log(solution([2, 4, 5, 7], 3));

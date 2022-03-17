@@ -29,4 +29,31 @@ function mostAppearNum(numsCount) {
   return ret;
 }
 
-solution
+solution;
+
+function solution(s) {
+  let result = [];
+
+  for (let i = 0; i < 10; i++) {
+    result[i] = 0;
+  }
+
+  let arr = s.split("");
+
+  for (i = 0; i < arr.length; i++) {
+    result[arr[i]]++;
+  }
+
+  max = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (result[i] > max) {
+      max = result[i];
+    }
+  }
+
+  for (i = 0; i < arr.length; i++) {
+    if (max == result[i]) {
+      return i;
+    }
+  }
+}

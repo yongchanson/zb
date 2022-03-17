@@ -3,13 +3,26 @@
  * @param num {number}
  * @returns {number}
  */
-function solution(arr, num) {
-  let mergedArr = [];
+function solution(arr, Num) {
+  let list = [];
   for (let i = 0; i < arr.length; i++) {
-    mergedArr = [].concat(mergedArr, arr[i]);
+    for (let j = 0; j < arr[i].length; j++) {
+      list.push(arr[i][j]);
+    }
   }
-  mergedArr.sort((a, b) => a - b)
-  return mergedArr[num - 1]
+  list.sort(function (x, y) {
+    return x - y;
+  });
+  return list[Num - 1];
 }
 
-solution
+console.log(
+  solution(
+    [
+      [1, 2, 22],
+      [3, 4, 23],
+      [8, 9, 33],
+    ],
+    7
+  )
+);
