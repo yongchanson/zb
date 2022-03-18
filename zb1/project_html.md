@@ -11,3 +11,49 @@
 - `li{ &:nth-child(3) ~ li {} }` : 3번째 child 이후 li에 속성추가
 
 - input의 placeholder에 옵션 적용 : `input{ &::placeholder {color:red} }`
+
+### 핵심sass
+
+4. Sass Variables
+
+- 변수선언 : `$h1-color: blue;`
+- 변수사용 : `color: $h1-color;`
+
+5. Sass @mixin
+
+```javascript
+@mixin overflowHidden {
+  overflow:hidden;
+}
+
+p {
+  @include overflowHidden;
+}
+```
+
+```javascript
+//contain, transparent은 기본값 설정한 것
+@mixin bg-img ($bgUrl, $bgSize:contain, $bgColor:transparent) {
+  background-image: url($bgUrl);
+  background-size: $bgSize;
+  background-color: $bgColor;
+}
+
+.bg {
+  width: 100px;
+  @include bg-img('https://abcd.com/img/logo', contain, blue);
+}
+```
+
+6. Sass @function
+
+```javascript
+@function colorOpacity($color, $opacity) {
+  $color: rgba($color, $opacity);
+  @return $color;
+}
+
+h1 {
+  color: colorOpacity(green, 0.3);
+}
+```
