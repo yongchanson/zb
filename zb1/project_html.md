@@ -57,3 +57,20 @@ h1 {
   color: colorOpacity(green, 0.3);
 }
 ```
+
+### 진입페이지
+
+- 부모요소가 flex일때, 자식에게 `flex:1;'을 주면 1:1:1비율로 배열됨
+- 반복적인 요소 사이에 border 삽입
+
+  ```javascript
+  .item {
+    & + .item {
+      border-left : 1px solid red;
+    }
+  }
+  ```
+
+- <u>inline은 top/bottom의 margin, padding 조절불가</u>하기 때문에 `display:inline-block` 속성을 주면 가능
+
+-

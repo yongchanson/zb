@@ -214,7 +214,7 @@ ex) `a[href^="http://"]`
 
 1. display
 
-- inline은 top/bottom의 margin, padding 조절불가(left, right는 가능) / 가로배치
+- <u>inline은 top/bottom의 margin, padding 조절불가</u>(left, right는 가능) / 가로배치
 - block : width, height 지정가능 / 세로배치
 - inline-block : width, height지정가능 / 가로배치 / ex) `<input>`
 
@@ -256,12 +256,12 @@ ex) `a[href^="http://"]`
 
 ### 색상과 배경
 
-### transform
+### 트랜스폼
 
 6. 기준점 - transform-origin
 
 - ex) 넷플릭스 `transform: scale(1.5) transform-origin : top left`
 
-### transition
+### 트랜지션
 
-4.
+### 애니메이션
