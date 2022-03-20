@@ -73,4 +73,12 @@ h1 {
 
 - <u>inline은 top/bottom의 margin, padding 조절불가</u>하기 때문에 `display:inline-block` 속성을 주면 가능
 
+### 메뉴 페이지
+
+1-1. 헤더 영역1
+
+- 요소를 양쪽으로 보냄(중앙에 맞춰서) `display:fled; justify-content: space-between;`
+
+1-2. 헤더 영역2
+
 -
