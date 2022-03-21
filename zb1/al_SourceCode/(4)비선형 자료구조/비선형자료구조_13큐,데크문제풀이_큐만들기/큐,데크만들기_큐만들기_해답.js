@@ -5,11 +5,11 @@ function Queue() {
 }
 
 Queue.prototype.enqueue = function (element) {
-  this.array.push(element);
+  this.array.push(element); //뒤에 추가
 };
 
 Queue.prototype.dequeue = function () {
-  let ret = this.array.shift();
+  let ret = this.array.shift(); //앞에 제거
   return ret === undefined ? -1 : ret;
 };
 
@@ -39,7 +39,7 @@ function answer(cmds) {
 
     switch (cmd) {
       case "enqueue":
-        queue.enqueue(Number(cmds[i].split(" ")[1]));
+        queue.enqueue(Number(cmds[i].split(" ")[1])); //[1]은 " "뒤의 숫자를 가리킴
         break;
       case "dequeue":
         result.push(queue.dequeue());

@@ -30,7 +30,7 @@ function answer(priorities, select) {
 
   // 3. 문서 번호 select를 찾을때까지 계쏙 반복
 
-  let vq = new Queue(); // index
+  let vq = new Queue(); // index가 모인 배열
   let pq = new Queue();
   for (let i = 0; i < priorities.length; i++) {
     vq.enqueue(i);
@@ -41,7 +41,7 @@ function answer(priorities, select) {
   while (true) {
     // 출력 부분
     if (pq.front() === pq.max()) {
-      count++;
+      count++; //조건이 성립할때만 count++
       // 확인 필요 문서
       if (vq.front() === select) {
         result = count;

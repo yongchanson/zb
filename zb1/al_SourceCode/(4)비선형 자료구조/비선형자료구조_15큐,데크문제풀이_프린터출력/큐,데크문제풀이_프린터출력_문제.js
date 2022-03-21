@@ -4,11 +4,9 @@
 function answer(priorities, select) {
   let result = -1;
 
-  // 코드 구현 시작 영역
+  //우선순위가 낮으면 뒤로 보냄
 
-  // …
-
-  // 코드 구현 종료 영역
+  //가장 높은 우선순위면 출력(삭제)
 
   return result;
 }

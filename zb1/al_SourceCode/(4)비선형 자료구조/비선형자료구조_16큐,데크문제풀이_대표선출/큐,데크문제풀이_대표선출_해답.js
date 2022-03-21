@@ -10,7 +10,9 @@ function CircularQueue(size) {
 
 CircularQueue.prototype.enqueue = function (element) {
   this.length++;
-  this.array[this.tail++ % this.size] = element;
+  this.array[this.tail++ % this.size] = element; //원형
+  // this.array[this.tail] = element;
+  // this.tail = (this.tail + 1) % this.size;
 };
 
 CircularQueue.prototype.dequeue = function () {
@@ -29,14 +31,14 @@ function answer(n, m, k) {
   }
 
   // 2. 첫번째 후보 제거 노드 위치로 설정
-  cq.tail = cq.head = (n + m - 1) % n;
+  cq.tail = cq.head = (n + m - 1) % n; //TC:1 -> 2번째(index:1), m-1이면 음수가 되어 잘못 가리킴
 
   // 3. k만큼 움직이면서 대표 후보를 제거 (dequeue)
   // 제거된 번호는 result에 추가
   let count;
   result.push(cq.dequeue());
   while (cq.length != 0) {
-    count = k - 1;
+    count = k - 1; //result.push(cq.dequeue());해준것 고려
     while (count--) {
       cq.enqueue(cq.dequeue());
     }

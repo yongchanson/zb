@@ -28,9 +28,9 @@ function answer(n) {
 
   // 3. 카드가 없어질 때까지 1, 2번을 반복한다.
   while (queue.array.length != 0) {
-    result.push(queue.dequeue());
+    result.push(queue.dequeue()); //가장 앞(1)을 삭제하면서 바로 result로 push
     if (queue.array.length != 0) {
-      queue.enqueue(queue.dequeue());
+      queue.enqueue(queue.dequeue()); //가장 앞(2)을 삭제하고, 바로 가장 뒤로 push = (2)의 위치변경
     }
   }
 

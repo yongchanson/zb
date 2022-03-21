@@ -4,11 +4,9 @@
 function answer(n) {
   let result = [];
 
-  // 코드 구현 시작 영역
+  //1. 제일 앞 제거
 
-  // …
-
-  // 코드 구현 종료 영역
+  //2. 제일 앞을 제일 뒤로 이동
 
   return result;
 }
