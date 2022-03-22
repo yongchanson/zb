@@ -265,3 +265,31 @@ ex) `a[href^="http://"]`
 ### 트랜지션
 
 ### 애니메이션
+
+- 애니메이션 제어(정지)
+```javascript
+.box:hover{
+animation-play-state : running or paused
+}`
+```
+
+- 마지막 스타일(100%) 유지(forwards)
+```javascript
+.box{
+  animation-fill-mode: forwards;
+}
+@keyframes fill-mode {
+  0& {background-color:red}
+  50% {width:200%}
+  100& {background-color:black}
+}
+```
+
+### flexbox
+
+5. Container
+
+- 다음줄로 이동(공간없을시) `flex-warp: wrap;`
+- shorthand `flex-flow:~`
+
+7. itme
