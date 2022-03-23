@@ -20,9 +20,10 @@ function solution(s) {
 
 solution;
 
+//스택 사용
 function solution(s) {
   let answer = [];
-
+  
   for (let i = 0; i < s.length; i++) {
     if (answer.length === 0) {
       answer.push(s[i]);
@@ -35,6 +36,18 @@ function solution(s) {
 
   answer = answer.join("");
   return answer;
+}
+
+
+
+function solution(s) {
+  const stack = [];
+
+  for (const char of s) {
+    stack[stack.length - 1] === char ? stack.pop() : stack.push(char);
+  }
+
+  return stack.join("");
 }
 
 function rmv_substr(s) {}
@@ -50,14 +63,4 @@ function solution(s) {
     }
     if (done_flag) return s;
   }
-}
-
-function solution(s) {
-  const stack = [];
-
-  for (const char of s) {
-    stack[stack.length - 1] === char ? stack.pop() : stack.push(char);
-  }
-
-  return stack.join("");
 }
