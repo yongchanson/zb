@@ -134,19 +134,11 @@
 //   }
 
 //최종제출 - 1점
-function solution(num) {
-  let string = num.toString();
-  let string_reverse = string.split("").reverse().join("");
-  let num_reverse = parseInt(string_reverse);
-
-  if (Math.abs(num_reverse) > 100000) {
-    return 0;
-  } else {
-    if (num > 0) {
-      return num_reverse;
-    } else {
-      return -num_reverse;
-    }
-  }
+function solution(s) {
+  return s
+    .split(/[.,!? ]/) //정규식 사용
+    .filter((word) => word !== "") //""가 아닌 요소를 모아 새로운 배열로 반환
+    .map((word) => word.split("")); //abc->["a","b","c"]->["c","b","a"]->cba
 }
-console.log(solution(100001));
+
+console.log(solution("Hello, World!?"));

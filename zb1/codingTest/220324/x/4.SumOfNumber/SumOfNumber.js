@@ -4,6 +4,22 @@
  */
 
 function solution(n) {
+  let count = 1; //0일때 1이므로 디폴트 1
+
+  for (let i = 1; i < n; i++) {
+    let sum = 0;
+    for (let j = i; j < n; j++) {
+      sum += j;
+      if (sum >= n) {
+        if (sum === n) count++;
+        break;
+      }
+    }
+  }
+  return count;
+}
+
+function solution(n) {
   let ret = 0;
 
   // n부터 0까지 순회합니다.
@@ -25,22 +41,6 @@ function solution(n) {
   }
 
   return ret;
-}
-
-function solution(n) {
-  let count = 1; //0일때 1이므로 디폴트 1
-
-  for (let i = 1; i < n; i++) {
-    let sum = 0;
-    for (let j = i; j < n; j++) {
-      sum += j;
-      if (sum >= n) {
-        if (sum === n) count++;
-        break;
-      }
-    }
-  }
-  return count;
 }
 
 //공개된 정답
