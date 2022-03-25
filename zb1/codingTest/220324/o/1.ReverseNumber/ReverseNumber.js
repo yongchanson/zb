@@ -5,16 +5,18 @@
 
 //최종제출 - 1점
 function solution(num) {
-  let string = num.toString();
-  let string_reverse = string.split("").reverse().join("");
-  let num_reverse = parseInt(string_reverse);
+  let string = num.toString(); //num을 int->string
+  let string_reverse = string.split("").reverse().join(""); //ex) 123->["1", "2", "3"]->["3", "2", "1"]->"321"
+  let num_reverse = parseInt(string_reverse); ///string을 int으로 변경
 
   if (Math.abs(num_reverse) > 100000) {
+    //제한사항 추가
     return 0;
   } else {
     if (num > 0) {
       return num_reverse;
     } else {
+      //음수인경우 -추가
       return -num_reverse;
     }
   }
