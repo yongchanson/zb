@@ -93,29 +93,60 @@
 //   console.log(solution(input[i]));
 // }
 
-function solution(orders, n) {
-  let result = 0;
-  for (let i = 0; i < orders.length; i++) {
-    if (orders[i] < n && orders[i + 1] > n) {
-      console.log(i);
-      result += orders[i + 1] + n + (orders[i] - n);
+// function solution(orders, n) {
+//   let result = 0;
+//   for (let i = 0; i < orders.length; i++) {
+//     if (orders[i] < n && orders[i + 1] > n) {
+//       console.log(i);
+//       result += orders[i + 1] + n + (orders[i] - n);
+//     }
+//   }
+//   return result;
+// }
+
+// let input = [
+//   // TC: 1
+//   "abba",
+
+//   // TC: 2
+//   "accaaaaaaabccbbbcabc",
+
+//   // TC: 3
+//   "abbac",
+// ];
+
+// for (let i = 0; i < input.length; i++) {
+//   process.stdout.write(`#${i + 1} `);
+//   console.log(solution([1, 3, 5, 7, 9], 5));
+// }
+
+// function solution(s) {
+
+//   let s1 = s.split(".");
+//   let s2 = s1.join().split(",");
+//   console.log(s2)
+//   let s3 = s2.join().split("!");
+//   console.log(s3)
+//   let s4 = s3.join().split("?");
+//   let s5 = s4.join().split(" ");
+//   return s5
+
+//   }
+
+//최종제출 - 1점
+function solution(num) {
+  let string = num.toString();
+  let string_reverse = string.split("").reverse().join("");
+  let num_reverse = parseInt(string_reverse);
+
+  if (Math.abs(num_reverse) > 100000) {
+    return 0;
+  } else {
+    if (num > 0) {
+      return num_reverse;
+    } else {
+      return -num_reverse;
     }
   }
-  return result;
 }
-
-let input = [
-  // TC: 1
-  "abba",
-
-  // TC: 2
-  "accaaaaaaabccbbbcabc",
-
-  // TC: 3
-  "abbac",
-];
-
-for (let i = 0; i < input.length; i++) {
-  process.stdout.write(`#${i + 1} `);
-  console.log(solution([1, 3, 5, 7, 9], 5));
-}
+console.log(solution(100001));
