@@ -4,15 +4,16 @@
  */
 
 function solution(n) {
-  let count = 1; //0일때 1이므로 디폴트 1
+  let count = 1; //테스트케이스 0 = 1이므로 디폴트 1
 
   for (let i = 1; i < n; i++) {
     let sum = 0;
     for (let j = i; j < n; j++) {
-      sum += j;
+      sum += j; //sum에 1+2+3...n-1순서대로 더합니다.
       if (sum >= n) {
-        if (sum === n) count++;
+        if (sum == n) count++;
         break;
+        //sum==n인 경우 count+=1, sum>n인 경우 break;
       }
     }
   }

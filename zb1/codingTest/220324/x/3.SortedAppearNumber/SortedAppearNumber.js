@@ -8,6 +8,7 @@ function solution(s) {
   for (i = 0; i < s.length; i++) {
     result[s[i]]++;
   }
+  console.log(result); //output : {{ 0: 0, 1: 2, 2: 3, 3: 1, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 };
 
   let result_sort = Object.keys(result).sort(function (a, b) {
     return result[b] - result[a];

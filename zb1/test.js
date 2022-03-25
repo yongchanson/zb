@@ -135,10 +135,17 @@
 
 //최종제출 - 1점
 function solution(s) {
-  return s
-    .split(/[.,!? ]/) //정규식 사용
-    .filter((word) => word !== "") //""가 아닌 요소를 모아 새로운 배열로 반환
-    .map((word) => word.split("")); //abc->["a","b","c"]->["c","b","a"]->cba
+  let result = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 };
+  for (i = 0; i < s.length; i++) {
+    result[s[i]]++;
+  }
+  console.log(result); //output : {{ 0: 0, 1: 2, 2: 3, 3: 1, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 };
+
+  let result_sort = Object.keys(result).sort(function (a, b) {
+    return result[b] - result[a];
+  }); //딕셔너리를 value기준으로 정렬하여 key값을 반환
+
+  return result_sort.join(" ");
 }
 
-console.log(solution("Hello, World!?"));
+console.log(solution("221123"));
