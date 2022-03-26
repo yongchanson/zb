@@ -267,6 +267,7 @@ ex) `a[href^="http://"]`
 ### 애니메이션
 
 - 애니메이션 제어(정지)
+
 ```javascript
 .box:hover{
 animation-play-state : running or paused
@@ -274,6 +275,7 @@ animation-play-state : running or paused
 ```
 
 - 마지막 스타일(100%) 유지(forwards)
+
 ```javascript
 .box{
   animation-fill-mode: forwards;
@@ -292,4 +294,4 @@ animation-play-state : running or paused
 - 다음줄로 이동(공간없을시) `flex-warp: wrap;`
 - shorthand `flex-flow:~`
 
-7. itme
+7. item
