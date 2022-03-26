@@ -133,19 +133,24 @@
 
 //   }
 
-//최종제출 - 1점
-function solution(s) {
-  let result = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 };
-  for (i = 0; i < s.length; i++) {
-    result[s[i]]++;
-  }
-  console.log(result); //output : {{ 0: 0, 1: 2, 2: 3, 3: 1, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 };
+function solution(points) {
+  //세점 A(a,d), B(b,e), C(c,f)가 존재할때,
+  //AB의 길이 = ( (a-b)^2 + (d-e)^2 )^1/2
+  //H = 삼각형의 높이(AB와 C의 수직으로 만나는) = ( (a-b)(d-f) + (c-a)(d-e) ) / ( (a-b)^2 + (d-e)^2 ) )^1/2
+  //AB의 길이 * H를 하면 소거에 의해, H의 분자만 남게 되어 ( (ae+bf+cd) - (db + ec + fa) )가 된다.
+  //이는 이 문제의 정답과 일치한다.
+  const x1 = points[0];
+  const y1 = points[1];
+  const x2 = points[2];
+  const y2 = points[3];
+  const x3 = points[4];
+  const y3 = points[5];
 
-  let result_sort = Object.keys(result).sort(function (a, b) {
-    return result[b] - result[a];
-  }); //딕셔너리를 value기준으로 정렬하여 key값을 반환
+  s1 = x1 * y2 - x1 * y3;
+  s2 = x2 * y3 - x2 * y1;
+  s3 = x3 * y1 - x3 * y2;
 
-  return result_sort.join(" ");
+  return Math.abs(s1 + s2 + s3);
 }
 
-console.log(solution("221123"));
+console.log(solution([1, 1, 2, 5, 3, 4]));
