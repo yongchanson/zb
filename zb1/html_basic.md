@@ -294,4 +294,67 @@ animation-play-state : running or paused
 - 다음줄로 이동(공간없을시) `flex-warp: wrap;`
 - shorthand `flex-flow:~`
 
-7. item
+7. item : fles-grow
+
+- 늘어난 영역을 나눠가짐
+- 1로 지정 : 남은 공간을 item에 균일하게 분배하여 남는자리없도록
+- 2로 지정 : 1번 item제외하고 나머지 item끼리 분배(같지 않음)
+
+8. item : flex-shrink
+
+- 줄어든 영역을 균일하게 나눠가짐
+
+9. item : flex-basis
+
+- 플렉스 item 초기값(지정하지 않으면 width)
+
+11. Container - justify-content
+
+- 8:20쯤사진 space-between vs space-around
+
+12. Container - alian-items
+
+- space-between, space-around 사용불가
+- justify-content vs alian-items
+  (1) justify-content : 한줄 속 아이템들에 대한 속성(여러 요소)
+  (2) alian-items : 한줄 자체를 어디에 둘지(한줄에 대한)
+
+13. align-content
+
+- align-content vs justify-content, alian-items
+  (1) item이 여러 가로줄이면 사용
+  (2) item이 한줄이면 사용
+
+14. align-self
+
+- 특정 item에 align-items를 적용
+
+### Grid(~10:Container, 11~14:item)
+
+3. grid-template-rows, gird-template-columns
+
+- `repeat(2, 1fr)` = `1fr 1fr`
+
+4. grid-template-areas
+
+```javascript
+1. 이름지정
+.header {
+  grid-area: hd
+}
+2. 자리잡기(. = 빈칸)
+grid-template-areas:
+"hd hd hd hd"
+"ma ma . ma"
+"ft ft ft ft"
+```
+
+5. gap, row-gap, column-gap
+
+- 그리드 사이 여백 지정(row column 순서) `gap: 50px 10px`
+
+6. grid-auto-rows, gird-auto-columns
+
+- ex) 1~3행의 크기만 지정했을경우 4번째~ 행의 크기를 지정(암시적 크기 지정<->명시적 크기지정=template)
+
+7.
