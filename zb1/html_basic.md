@@ -357,4 +357,14 @@ grid-template-areas:
 
 - ex) 1~3행의 크기만 지정했을경우 4번째~ 행의 크기를 지정(암시적 크기 지정<->명시적 크기지정=template)
 
-7.
+10. Justify-items, align-items
+
+- 하나의 아이템에 대한 속성
+
+16. auto-fill, auto-fit
+
+- auto-fill, auto-fit(남는 자리를 채워줌) : 개수를 유연하게 조절 `grid-template-colums:repeat(auto-fill, 100px)`
+
+- minmax : 100px보다 작으면 1:1비율로 적용 / 크면 100px로 적용 `grid-template-colums:repeat(auto-fit, minmax(100px, 1fr))`
+
+### 반응형 디자인

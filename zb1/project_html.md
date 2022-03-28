@@ -77,7 +77,7 @@ h1 {
 
 1-1. 헤더 영역1
 
-- 요소를 양쪽으로 보냄(중앙에 맞춰서) `display:fled; justify-content: space-between;`
+- 요소를 양쪽으로 보냄(중앙에 맞춰서) `display:flex; justify-content: space-between;`
 
 1-2. 헤더 영역2
 
