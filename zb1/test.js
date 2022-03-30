@@ -133,24 +133,20 @@
 
 //   }
 
-function solution(points) {
-  //세점 A(a,d), B(b,e), C(c,f)가 존재할때,
-  //AB의 길이 = ( (a-b)^2 + (d-e)^2 )^1/2
-  //H = 삼각형의 높이(AB와 C의 수직으로 만나는) = ( (a-b)(d-f) + (c-a)(d-e) ) / ( (a-b)^2 + (d-e)^2 ) )^1/2
-  //AB의 길이 * H를 하면 소거에 의해, H의 분자만 남게 되어 ( (ae+bf+cd) - (db + ec + fa) )가 된다.
-  //이는 이 문제의 정답과 일치한다.
-  const x1 = points[0];
-  const y1 = points[1];
-  const x2 = points[2];
-  const y2 = points[3];
-  const x3 = points[4];
-  const y3 = points[5];
-
-  s1 = x1 * y2 - x1 * y3;
-  s2 = x2 * y3 - x2 * y1;
-  s3 = x3 * y1 - x3 * y2;
-
-  return Math.abs(s1 + s2 + s3);
+function solution(arr) {
+  let result = 0;
+  for (i = 0; i < arr.length; i++) {
+    result += Math.max(...arr[i]);
+  }
+  return result;
 }
 
-console.log(solution([1, 1, 2, 5, 3, 4]));
+console.log(
+  solution([
+    [821],
+    [410, 567],
+    [943, 6, 844],
+    [780, 936, 436, 974],
+    [882, 104, 893, 854, 862],
+  ])
+);

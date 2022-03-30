@@ -1,4 +1,11 @@
-# JavaScript 기초 문법
+### 프로그래머스
+
+- for문 in vs of
+  (1) in : 인덱스값 `for (const item of arr){}`
+  (2) of : 값 `or (const item of arr){}`
+- concat : 기존배열에 새 배열을 합침 `arr.concat(arr2) = arr + arr2`
+
+### JavaScript 기초 문법
 
 7. 변수와 상수
 
@@ -654,4 +661,4 @@ Max. 스택 vs 큐
 - 해시함수 : 고정된 길이의 데이터로 매핑하는 함수
 - 해시테이블 : 평균 O(1) 시간복잡도, 해시함수 사용
 
-25. 
+25.
